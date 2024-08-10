@@ -17,6 +17,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Constants from 'expo-constants';
+import SplashScreen from 'react-native-splash-screen';
 
 function Section({children, title}) {
   const isDarkMode = useColorScheme() === 'dark';
@@ -48,6 +49,9 @@ function App() {
   const isDarkMode = useColorScheme() === 'dark';
   useEffect(() => {
     console.log('Constants:' + Constants);
+    console.log(SplashScreen);
+
+    SplashScreen.hide();
   }, []);
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
