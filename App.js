@@ -51,7 +51,7 @@ function App() {
     console.log('Constants:' + Constants);
     console.log(SplashScreen);
 
-    SplashScreen.hide();
+    SplashScreen?.hide();
   }, []);
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
