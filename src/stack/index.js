@@ -1,9 +1,9 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { TabBarIcon } from '../components/navigation/TabBarIcon';
 import HomeStack from './homeStack';
 import UserStack from './userStack';
-import {createStackNavigator} from '@react-navigation/stack';
-import {TabBarIcon} from '../components/navigation/TabBarIcon';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -17,24 +17,14 @@ export default function MyTabs() {
           component={HomeStack}
           options={{
             headerShown: false,
-            tabBarIcon: ({color, focused}) => (
-              <TabBarIcon
-                name={focused ? 'home' : 'home-outline'}
-                color={color}
-              />
-            ),
+            tabBarIcon: ({ color, focused }) => <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />,
           }}
         />
         <Tab.Screen
           name="User"
           component={UserStack}
           options={{
-            tabBarIcon: ({color, focused}) => (
-              <TabBarIcon
-                name={focused ? 'code-slash' : 'code-slash-outline'}
-                color={color}
-              />
-            ),
+            tabBarIcon: ({ color, focused }) => <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />,
           }}
         />
       </Tab.Navigator>
@@ -42,10 +32,7 @@ export default function MyTabs() {
   }
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Tabs"
-        component={Tabs}
-        options={{headerShown: false}}></Stack.Screen>
+      <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }}></Stack.Screen>
       {/*  下为不带tab的路由 */}
       {/* <Stack.Screen
         name="scoreShow"
