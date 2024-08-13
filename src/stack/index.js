@@ -3,7 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeStack from './homeStack';
 import UserStack from './userStack';
 import {createStackNavigator} from '@react-navigation/stack';
-// import {TabBarIcon} from '../components/navigation/TabBarIcon';
+import {TabBarIcon} from '../components/navigation/TabBarIcon';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -15,23 +15,27 @@ export default function MyTabs() {
         <Tab.Screen
           name="homeStack"
           component={HomeStack}
-          options={{headerShown: false}}
-          tabBarIcon={({color, focused}) => (
-            <TabBarIcon
-              name={focused ? 'home' : 'home-outline'}
-              color={color}
-            />
-          )}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({color, focused}) => (
+              <TabBarIcon
+                name={focused ? 'home' : 'home-outline'}
+                color={color}
+              />
+            ),
+          }}
         />
         <Tab.Screen
           name="User"
           component={UserStack}
-          tabBarIcon={({color, focused}) => (
-            <TabBarIcon
-              name={focused ? 'code-slash' : 'code-slash-outline'}
-              color={color}
-            />
-          )}
+          options={{
+            tabBarIcon: ({color, focused}) => (
+              <TabBarIcon
+                name={focused ? 'code-slash' : 'code-slash-outline'}
+                color={color}
+              />
+            ),
+          }}
         />
       </Tab.Navigator>
     );

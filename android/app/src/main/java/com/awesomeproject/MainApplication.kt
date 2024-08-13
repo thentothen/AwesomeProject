@@ -15,6 +15,7 @@ import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.soloader.SoLoader
 
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
+import com.oblador.vectoricons.VectorIconsPackage
 
 class MainApplication : Application(), ReactApplication {
 
@@ -25,6 +26,7 @@ class MainApplication : Application(), ReactApplication {
               // Packages that cannot be autolinked yet can be added manually here, for example:
               // add(MyReactNativePackage())
               // add(SplashScreenReactPackage())
+              add(VectorIconsPackage())
             }
 
         override fun getJSMainModuleName(): String = "index"

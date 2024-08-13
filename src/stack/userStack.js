@@ -1,5 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+
+import User from '../views/user';
 export default function HomeScreen() {
-  return <Text style={{fontSize: 20}}>123 </Text>;
+  return <User> </User>;
 }
