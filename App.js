@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import React, { useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import Constants from 'expo-constants';
 import SplashScreen from 'react-native-splash-screen';
 import Stack from './src/stack';

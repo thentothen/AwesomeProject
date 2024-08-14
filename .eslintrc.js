@@ -19,5 +19,6 @@ module.exports = {
     'no-unused-vars': 'off',
     'react/prop-types': 'off',
     'react/self-closing-comp': 'off',
+    'react-native/no-inline-styles': 'off',
   },
 };
