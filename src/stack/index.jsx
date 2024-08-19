@@ -6,6 +6,7 @@ import { TabBarIcon } from '../components/navigation/TabBarIcon';
 import HomeStack from './homeStack';
 import UserStack from './userStack';
 import UserDetail from '../views/user/detail';
+import Login from '../views/login';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -38,6 +39,7 @@ export default function MyTabs() {
       {/*  下为不带tab的路由 */}
       <Stack.Screen name="UserDetail" component={UserDetail} options={{ title: 'UserDetail1' }} />
       <Stack.Screen name="UserDetail2" component={UserDetail} options={{ title: 'UserDetail2' }} />
+      <Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />
     </Stack.Navigator>
   );
 }
