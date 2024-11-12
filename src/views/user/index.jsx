@@ -1,20 +1,18 @@
 import * as React from 'react';
-import { View, StyleSheet, Button } from 'react-native';
+import { Button } from 'react-native-paper';
+import { View, StyleSheet } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useFocusEffect } from '@react-navigation/native';
 
+import request from '../../request';
 export default function App({ navigation }) {
   React.useEffect(() => {
     console.log('mounted');
-    fetch('http://localhost:8081/getUser', {})
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
   }, []);
   useFocusEffect(() => {
+    request({ url: 'http://192.168.0.36:8081/getUser' }).then((res) => {
+      console.log(res);
+    });
     console.log('user active');
   });
   return (

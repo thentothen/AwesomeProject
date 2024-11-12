@@ -29,6 +29,14 @@ function Tabs() {
           tabBarIcon: ({ color, focused }) => <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />,
         }}
       />
+      <Tab.Screen
+        name="Login"
+        component={Login}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />,
+        }}
+      />
     </Tab.Navigator>
   );
 }
